@@ -1,0 +1,29 @@
+.done-true {
+    text-decoration: line-through;
+    color: grey
+
+    
+}
+
+.item-done-true {
+    background-color: rgba(240, 235, 235, 0.683);
+}
+
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.container {
+    width: 40%;
+    margin: auto;
+}
+
+.container h4 {
+    font-family:'Times New Roman', Times, serif;
+    font-size: 13px;
+}
+.container h5 {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}

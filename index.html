@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Angular Todo App</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" media="screen" title="personalStylesheet" charset="utf-8">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+    <!-- Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+</head>
+
+<body ng-app="todoApp">
+    <br />
+
+    <div class="container" ng-controller="TodoCtrl">
+        <h5 style="font-size: 25px" align="center">To-do List</h4>
+        <span class="input-group">
+            <input type="text" class="form-control" placeholder="Enter a new task" ng-model="newTodo" />
+            <span class="input-group-btn">
+                <button class="btn btn-primary" name="button" ng-click="addTodo()">
+                    <span class="glyphicon glyphicon-plus"></span>Add
+                </button>
+                <button class="btn btn-danger" ng-click="clean()" >
+                    <span class="glyphicon glyphicon-trash"></span>
+                </button>
+            </span>
+        </span>
+        
+        <ul class="list-group">
+            <li class="list-group-item item-done-{{todo.done}}" ng-repeat="todo in todoList">
+                <div>
+                    <input type="checkbox" name="todocheck" ng-model="todo.done">
+                    <span class="done-{{todo.done}}">{{ todo.text }}</span>
+                </div>
+                <p style="font-size: 8px">Created now</p>
+            </li>
+        </ul>
+        <h4 align="center">Total Todos: {{ todoList.length }}</h4><br />
+    </div>
+
+
+    <script src="./index.js" charset="utf-8"></script>
+</body>
+
+</html>
